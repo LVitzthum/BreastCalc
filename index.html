@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <script src="./JS/breast.js"></script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<div class= "abc">
+
+<div class="jumbotron text-center">
+<h2> Breast Cancer Post SLNB Risk Calculator</h2>
+<p> This tool is designed to aggregate existing prediction models for calculating a patient’s risk of having 4 or more axillary lymph nodes and additional lymph nodes after sentinel lymph node biopsy. <p>
+<ul style="list-style-type:disc">
+</div>
+
+<div class= "row content">
+
+  <div class="col-md-3 leftcolumn">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            Katz Nomogram</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body p">
+            <p> This model incorporates tumor size, number of involved SLNs, presence of macromets, LVI, ECE, histology and number of negative SNLs to determine a patient’s risk of having 4 or more positive lymph nodes. </p>
+          <a href="https://www.ncbi.nlm.nih.gov/pubmed/18445838" target="_blank"> Katz et al. JCO 2008  PMID 18445838 </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            Rivers Model</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body p">
+            <p> This model predicts the risk of having 4 or more positive axillary lymph nodes based on tumor size, number of positive SLNs, percent of positive SLNs and the absence or presence of LVI and ECE.</p>
+            <a href="https://www.ncbi.nlm.nih.gov/pubmed/16378156" target="_blank">Rivers et al. Ann Surg Oncol. 2006 PMID 16378156</a>
+            </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title p">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            MSKCC Model </a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>This model predicts the risk of additional non SLN metastasis based on pathologic size, tumor type and grade, the number of positive and negative LNs, the method of detection and the presence of LVI multifocality or ER positivity. </p>
+            <a href="https://www.ncbi.nlm.nih.gov/pubmed/14654469?dopt=AbstractPlus" target="_blank">Van Zee et al. Ann Surg Oncol. 2003 PMID 14654469</a>
+           </div>
+        </div>
+      </div>
+    </div>
+        </div>
+
+<div class="col-md-6 content">
+Size of primary tumor: <input id= "Tsize" type="text" > cm
+<br>
+Number of positive sentinel lymph nodes: <input id= "Pnodes" type="text" >
+<br>
+Number of negative lymph nodes: <input type="text" id="Nnodes">
+<br>
+Select all that apply:
+<br>
+
+LVI present<input type="checkbox" id="LVI" ><br>
+Lobular histology <input type="checkbox" id="ILC" ><br>
+<br>
+Extranodal extension present <input type="checkbox" id="ECE" ><br>
+Macromet present (>2mm) <input type="checkbox" id="MM" ><br>
+
+<br>
+</div>
+
+
+<div class="col-md-3 formoutput">
+    <div class= "row">
+    <h5> Katz Model </h5>
+
+    <dev id="prompt1"> </dev>  <dev id="output"></dev> <br>
+    <dev id="prompt2"> </dev>  <dev id="Krisk"></dev>
+
+    </div> <hr>
+
+    <div class= "row">
+    <h5> Rivers Model </h5>
+    </div>
+<hr>
+<div class= "row">
+<h5> MSKCC Model </h5>
+</div>
+      </div>
+    </div>
+
+</div>
+<div class= "center">
+<button onclick="breast()" type="button" class="btn btn-primary">Calculate</button>
+</div>
+
+<p style="font-size:80%;"> Code by Lucas Vitzthum </p>
+</html>
