@@ -8,14 +8,17 @@
 <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="./JS/bootstrap-toggle.js"></script>
+  <link rel="stylesheet" type="text/css" href="CSS/bootstrap-toggle.css">
+  
   <script src="./JS/breast.js"></script>
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
 </head>
 
@@ -29,6 +32,9 @@
 </div>
 
 <div class= "row content">
+
+
+
 
   <div class="col-md-3 leftcolumn">
     <div class="panel-group" id="accordion">
@@ -88,11 +94,12 @@ Number of negative lymph nodes: <input type="text" id="Nnodes">
 Select all that apply:
 <br>
 
-LVI present<input type="checkbox" id="LVI" ><br>
-Lobular histology <input type="checkbox" id="ILC" ><br>
+
+LVI present<input type="checkbox"  data-toggle="toggle" id="LVI" ><br>
+Lobular histology <input type="checkbox"  data-toggle="toggle" id="ILC" ><br>
 <br>
-Extranodal extension present <input type="checkbox" id="ECE" ><br>
-Macromet present (>2mm) <input type="checkbox" id="MM" ><br>
+Extranodal extension present <input type="checkbox" data-toggle="toggle" id="ECE" ><br>
+Macromet present (>2mm) <input type="checkbox" data-toggle="toggle" id="MM" ><br>
 
 <br>
 </div>
