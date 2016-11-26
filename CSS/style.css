@@ -25,6 +25,8 @@ p
 
   .row.content {height: 300 px}
 
+
+
 .jumbotron {
   background-color: #006A96;
   color: #f2f2f2;
@@ -49,16 +51,20 @@ text-align:left;
 .formoutput{
 background-color: #3b5998;
 color: #f2f2f2;
-height:90%;
-padding:2em;
+height:98%;
+padding:3em;
 
 }
 
+.textcenter{
+  text-align: center;
+  padding: 10px;
+}
 .center {
   margin: auto;
    width: 50%;
    padding: 10px;
-   text-align: center;
+   text-align: left;
 }
 
 .abc

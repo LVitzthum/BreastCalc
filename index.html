@@ -17,7 +17,7 @@
 
   <script src="./JS/bootstrap-toggle.js"></script>
   <link rel="stylesheet" type="text/css" href="CSS/bootstrap-toggle.css">
-  
+
   <script src="./JS/breast.js"></script>
 
 </head>
@@ -45,7 +45,7 @@
             Katz Nomogram</a>
           </h4>
         </div>
-        <div id="collapse1" class="panel-collapse collapse in">
+        <div id="collapse1" class="panel-collapse collapse">
           <div class="panel-body p">
             <p> This model incorporates tumor size, number of involved SLNs, presence of macromets, LVI, ECE, histology and number of negative SNLs to determine a patient’s risk of having 4 or more positive lymph nodes. </p>
           <a href="https://www.ncbi.nlm.nih.gov/pubmed/18445838" target="_blank"> Katz et al. JCO 2008  PMID 18445838 </a>
@@ -84,48 +84,71 @@
     </div>
         </div>
 
-<div class="col-md-6 content">
-Size of primary tumor: <input id= "Tsize" type="text" > cm
-<br>
-Number of positive sentinel lymph nodes: <input id= "Pnodes" type="text" >
-<br>
-Number of negative lymph nodes: <input type="text" id="Nnodes">
-<br>
-Select all that apply:
-<br>
+<div class="col-md-6">
+  <div class ="row ">
+  <div class= "col-xs-3 center">Size of primary tumor: </div>
+  <input class="col-xs-1" id= "Tsize" type="text" >
+  <div class="col-xs-1"> cm</div>
+  </div>
 
+  <div class ="row">
+  <div class= "col-xs-3 center">Number of positive sentinel lymph nodes: </div>
+  <input class="col-xs-1" id= "Pnodes" type="text" >
+  </div>
 
-LVI present<input type="checkbox"  data-toggle="toggle" id="LVI" ><br>
-Lobular histology <input type="checkbox"  data-toggle="toggle" id="ILC" ><br>
-<br>
-Extranodal extension present <input type="checkbox" data-toggle="toggle" id="ECE" ><br>
-Macromet present (>2mm) <input type="checkbox" data-toggle="toggle" id="MM" ><br>
+  <div class ="row">
+  <div class= "col-xs-3 center">Number of negative sentinel lymph nodes: </div>
+  <input class="col-xs-1" id= "Nnodes" type="text" >
+  </div>
 
-<br>
+  <div class ="row ">
+    <div class ="col-xs-5 textcenter">   <strong>Select all that apply: </strong> </div> </div>
+
+  <div class ="row ">
+    <div class= "col-xs-3 center"> LVI present: </div>
+  <input type="checkbox" class="col-xs-2" data-toggle="toggle" id="LVI" >
+</div>
+
+<div class ="row ">
+  <div class= "col-xs-3 center"> Lobular histology: </div>
+<input type="checkbox" class="col-xs-2" data-toggle="toggle" id="ILC" >
+</div>
+
+<div class ="row ">
+  <div class= "col-xs-3 center">   Extranodal extension present: </div>
+<input type="checkbox" class="col-xs-2" data-toggle="toggle" id="ECE" >
+</div>
+
+<div class ="row ">
+  <div class= "col-xs-3 center">     Macromet present (>2mm): </div>
+<input type="checkbox" class="col-xs-2" data-toggle="toggle" id="MM" >
+</div>
+
 </div>
 
 
 <div class="col-md-3 formoutput">
-    <div class= "row">
-    <h5> Katz Model </h5>
+  <div class= "row">
+      <h4> Katz Model </h4>
+      <div id=alert1></div> <div id=alert2></div><div id=alert3></div>
 
-    <dev id="prompt1"> </dev>  <dev id="output"></dev> <br>
-    <dev id="prompt2"> </dev>  <dev id="Krisk"></dev>
+    <dev id="prompt1"> </dev> <strong> <dev id="output"></dev> </strong> <br>
+    <dev id="prompt2"> </dev> <strong>  <dev id="Krisk"> </strong></dev>
 
     </div> <hr>
 
     <div class= "row">
-    <h5> Rivers Model </h5>
+    <h4> Rivers Model </h4>
     </div>
 <hr>
 <div class= "row">
-<h5> MSKCC Model </h5>
+<h4> MSKCC Model </h4>
 </div>
       </div>
     </div>
 
 </div>
-<div class= "center">
+<div class= "textcenter">
 <button onclick="breast()" type="button" class="btn btn-primary">Calculate</button>
 </div>
 

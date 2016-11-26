@@ -30,46 +30,45 @@ if (document.getElementById("MM").checked == true) {
 var score = score + 16
 }
 var score = score - 58
+// Reset invalid input
+document.getElementById("alert1").className = "";
+document.getElementById("alert1").innerHTML = "";
+document.getElementById("alert2").className = "";
+document.getElementById("alert2").innerHTML = "";
+document.getElementById("alert3").className = "";
+document.getElementById("alert3").innerHTML = "";
 
 // displays error messages for invalid input//
 var Tsize = parseFloat(document.getElementById('Tsize').value);
-if (!Tsize && Tsize != 0)
-  alert("You need to enter a tumor size");
-if(Tsize > 10)
-{
-  alert("Size cannot be > 10");
-  return false;
-}
-else if (Tsize < 0)
-{
-  alert("Size cannot be < 0");
-  return false;
+if (!Tsize||Tsize < 0 ){
+  document.getElementById("alert1").className = "alert alert-danger";
+  document.getElementById("alert1").innerHTML = "Enter Tumor Size Input";
 }
 
-if (!Pnodes && Pnodes != 0)
-  alert("You need to enter the number of Pnodes");
+if(Tsize > 10)
+ {
+       document.getElementById("alert1").className = "alert alert-danger";
+     document.getElementById("alert1").innerHTML = "Model not valid for Tsize >10";
+   }
+
+
+
+if (!Pnodes || Pnodes < 0){
+
+    document.getElementById("alert2").className = "alert alert-danger";
+    document.getElementById("alert2").innerHTML = "Enter Positive Node Input";
+
+}
 if(Pnodes > 3)
 {
-  alert("Pnodes cannot be > 3");
-  return false;
-}
-else if (Pnodes < 0)
-{
-  alert("Pnodes cannot be < 0");
-  return false;
+  document.getElementById("alert2").className = "alert alert-danger";
+  document.getElementById("alert2").innerHTML = "Model not valid for > 3 positive nodes";
 }
 
-if (!Nnodes && Nnodes != 0)
-  alert("You need to enter the number of Nnodes");
-if(Nnodes > 3)
-{
-  alert("Nnodes cannot be > 3");
-  return false;
-}
-else if (Nnodes < 0)
-{
-  alert("Nnodes cannot be < 0");
-  return false;
+
+if (!Nnodes|| Nnodes < 0)
+{  document.getElementById("alert3").className = "alert alert-danger";
+  document.getElementById("alert3").innerHTML = "Enter Negative Node Input";
 }
 
 // Converts Katz score to nodal risk //
