@@ -177,4 +177,33 @@ document.getElementById("prompt1").innerHTML = "Katz Nomogram score =";
 document.getElementById("prompt2").innerHTML = "The predicted risk of having 4 or more lymph nodes positive is";
 document.getElementById("output").innerHTML = score;
 document.getElementById("Krisk").innerHTML = risk;
+
+// Rivers Model
+var rtsize = 0; var rlvi = 0; var rece = 0; var rsln = 0; var nprcnt = 1;
+if (Tsize > 2) {
+  rtsize = 1.17;
+}
+
+if (document.getElementById("LVI").checked == true) {
+var rlvi = 1.05;}
+
+if (document.getElementById("ECE").checked == true) {
+var rece = 1.08;
+}
+
+if (Pnodes == 2) {
+  var rsln = 3.49;
+  var nprcnt = 2;
+}
+else if (Pnodes == 3) {
+  var rsln = 5.07;
+  var nprcnt = 3
+}
+
+var r_alpha = -6.08 + rtsize + rlvi + rece + rsln + nprcnt;
+var rp = Math.exp(r_alpha)/(1 + Math.exp (r_alpha))
+var rp = Math.round(rp * 10000) / 100;
+document.getElementById("Rprompt").innerHTML = "The predicted risk of having 4 or more lymph nodes positive is";
+document.getElementById("Rrisk").innerHTML = rp ;
+document.getElementById("percent").innerHTML = "%";
 }
