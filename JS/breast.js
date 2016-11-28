@@ -45,6 +45,7 @@ if (!Tsize||Tsize < 0 ){
   document.getElementById("alert1").innerHTML = "Enter Tumor Size Input";
 }
 
+
 if(Tsize > 10)
  {
        document.getElementById("alert1").className = "alert alert-danger";
@@ -59,6 +60,10 @@ if (!Pnodes || Pnodes < 0){
     document.getElementById("alert2").innerHTML = "Enter Positive Node Input";
 
 }
+if (Pnodes == 0){
+  document.getElementById("alert2").className = "";
+  document.getElementById("alert2").innerHTML = "";
+}
 if(Pnodes > 3)
 {
   document.getElementById("alert2").className = "alert alert-danger";
@@ -66,9 +71,14 @@ if(Pnodes > 3)
 }
 
 
-if (!Nnodes|| Nnodes < 0)
+if (Nnodes == "" || Nnodes < 0)
 {  document.getElementById("alert3").className = "alert alert-danger";
   document.getElementById("alert3").innerHTML = "Enter Negative Node Input";
+}
+
+if (Nnodes == 0){
+  document.getElementById("alert3").className = "";
+  document.getElementById("alert3").innerHTML = "";
 }
 
 // Converts Katz score to nodal risk //
@@ -175,18 +185,17 @@ var risk
     var score = Math.round(score * 10) / 10
 document.getElementById("prompt1").innerHTML = "Katz Nomogram score =";
 document.getElementById("prompt2").innerHTML = "The predicted risk of having 4 or more lymph nodes positive is";
-document.getElementById("output").innerHTML = score;
+document.getElementById("output").innerHTML = Nnodes;
 document.getElementById("Krisk").innerHTML = risk;
 
 // Rivers Model
 // Error messages
+document.getElementById("Ralert1").className = "";
+document.getElementById("Ralert1").innerHTML = "";
 if (!Pnodes || Pnodes < 1 || Pnodes > 3){
-
     document.getElementById("Ralert1").className = "alert alert-danger";
     document.getElementById("Ralert1").innerHTML = "Positive Node Input must be between 1 and 3";
-
 }
-
 
 
 // Calculates probability
