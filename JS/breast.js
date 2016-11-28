@@ -179,6 +179,17 @@ document.getElementById("output").innerHTML = score;
 document.getElementById("Krisk").innerHTML = risk;
 
 // Rivers Model
+// Error messages
+if (!Pnodes || Pnodes < 1 || Pnodes > 3){
+
+    document.getElementById("Ralert1").className = "alert alert-danger";
+    document.getElementById("Ralert1").innerHTML = "Positive Node Input must be between 1 and 3";
+
+}
+
+
+
+// Calculates probability
 var rtsize = 0; var rlvi = 0; var rece = 0; var rsln = 0; var nprcnt = 1;
 if (Tsize > 2) {
   rtsize = 1.17;
