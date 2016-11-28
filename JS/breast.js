@@ -192,11 +192,11 @@ var rece = 1.08;
 }
 
 if (Pnodes == 2) {
-  var rsln = 3.49;
+  var rsln = 1.47;
   var nprcnt = 2;
 }
 else if (Pnodes == 3) {
-  var rsln = 5.07;
+  var rsln = 2.03;
   var nprcnt = 3
 }
 
