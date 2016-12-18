@@ -71,17 +71,12 @@ if(Pnodes > 3)
 }
 
 
-<<<<<<< HEAD
-// if (!Nnodes|| Nnodes < 0)
-// {  document.getElementById("alert3").className = "alert alert-danger";
-//   document.getElementById("alert3").innerHTML = "Enter Negative Node Input";
-// }
-=======
+
+
 if (Nnodes == "" || Nnodes < 0)
 {  document.getElementById("alert3").className = "alert alert-danger";
   document.getElementById("alert3").innerHTML = "Enter Negative Node Input";
 }
->>>>>>> origin/master
 
 if (Nnodes == 0){
   document.getElementById("alert3").className = "";
