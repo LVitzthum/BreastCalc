@@ -187,7 +187,7 @@ var risk
     var score = Math.round(score * 10) / 10
 document.getElementById("prompt1").innerHTML = "Katz Nomogram score =";
 document.getElementById("prompt2").innerHTML = "The predicted risk of having 4 or more lymph nodes positive is";
-document.getElementById("output").innerHTML = Nnodes;
+document.getElementById("output").innerHTML = score;
 document.getElementById("Krisk").innerHTML = risk;
 
 // Rivers Model
